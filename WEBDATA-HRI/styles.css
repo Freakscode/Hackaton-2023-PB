@@ -41,9 +41,10 @@ section {
   padding: 10px;
 }
 
-/* Apply styles to the HTML sections */
+/*Estilo de las sección Inferiores (Preguntas) */
 section {
   background-color: white;
+  text-align: center;
   padding: 20px;
   margin-bottom: 20px;
   border: 2px solid black;
@@ -101,7 +102,8 @@ footer {
 }
 
 #about p {
-  text-align: justify; /* Justify the text for a cleaner look */
+  text-align: justify; /* Mejor vista justificado */
+  text-align: center;
 }
 
 /* Add styles for the skills section */
@@ -204,36 +206,6 @@ footer {
 }
 
 /* Add any other styles you need for the blog section */
-
-
-#projects {
-  text-align: center;
-
- }
-
- #projects p {
-  text-align: justify; /* Justify the text for a cleaner look */
-}
-
-.project {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.OSONIGBRO {
-  display:flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center; 
-  padding:0px;  
-  border-radius:5px;
-  width:10%; 
-  height:10%; 
-  margin: auto; /* Added margin auto for centering horizontally */
-}
-
-
-
 
  .social-icons {
     display:flex;
