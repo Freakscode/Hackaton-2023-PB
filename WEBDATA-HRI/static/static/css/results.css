@@ -2,7 +2,8 @@
     font-family:Georgia, Cochin, Gseorgia, Times, 'Times New Roman', serif;
     font-size: 25px;
     color: #fff;
-    position: relative;
+    /*position: relative; */
+    text-align: center;
     top: 50px;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -10,4 +11,10 @@
     border-radius: 80%;
   }
 
-  
+  head {
+    background-color: #2F4550;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
