@@ -1,0 +1,335 @@
+/* Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styles */
+header {
+  background-color: #1c2225;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+header nav li a {
+  text-decoration: none;
+  color: #cedce6;
+  padding: 5px;
+}
+
+header nav li a:hover {
+  color: #000000;
+}
+
+/* Sections Styles*/
+section {
+  background-color: #cedce6;
+  color: #000000;
+  padding: 10px;
+}
+
+.title  {     
+  font-family:Georgia, Cochin, Gseorgia, Times, 'Times New Roman', serif;
+  font-size: 25px;
+  color: #fff;
+  position: relative;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 25px;
+  border-radius: 80%;
+}
+
+.hero{
+  background-size: cover;
+  color: #00026bdc;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.profile-image {
+  width: 17%;
+  height: 17%;
+  border-radius: 80%;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+
+footer {
+  background-color: #2F4550;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+#about {     
+  text-align: center;
+}
+
+#about p {
+  text-align: justify; /* Justify the text for a cleaner look */
+}
+
+/* Add styles for the skills section */
+#skills {
+  text-align: center;
+  padding: 1px 0;
+}
+
+.skills-category {
+  margin-bottom: 20px;
+}
+
+.skills-category h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.skills-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skills-category li {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.skills-category li img {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  background: #cedce6; /* Apply the background color here */
+}
+
+.horizontal-list {
+  display: flex;
+  list-style: none;
+  gap: 20px; /* Adjust the gap as needed */
+  justify-content: center; /* Center the entire list horizontally */
+}
+
+.horizontal-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.horizontal-list img {
+  width: 60px; /* Adjust the width of the icons as needed */
+  height: 60px; /* Adjust the height of the icons as needed */
+  background: #cedce6; /* Apply the background color here */
+}
+
+
+/* Projects section */
+
+
+/* Add styles for the blog section */
+#blog {
+  text-align: center;
+  padding: 1px 0;
+}
+
+.blog-post {
+  margin-bottom: 30px;
+}
+
+.blog-post img {
+  width: 100%;
+  max-width: 300px; /* Adjust the size as per your design */
+  border-radius: 5px;
+  margin-left: 40px;
+}
+
+.blog-post h3 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.blog-post p {
+  margin-bottom: 10px;
+}
+
+.blog-post a {
+  text-align: center;
+  display: inline-block;
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  /*margin-left: 60px;*/
+  text-decoration: none;
+}
+
+.blog-post a:hover {
+  background-color: #0056b3;
+}
+
+/* Add any other styles you need for the blog section */
+
+
+#projects {
+  text-align: center;
+
+ }
+
+ #projects p {
+  text-align: justify; /* Justify the text for a cleaner look */
+}
+
+.project {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.OSONIGBRO {
+  display:flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center; 
+  padding:0px;  
+  border-radius:5px;
+  width:10%; 
+  height:10%; 
+  margin: auto; /* Added margin auto for centering horizontally */
+}
+
+
+
+
+ .social-icons {
+    display:flex;
+    justify-content:left;
+    margin-top:40px;
+    list-style:none;
+  }
+    
+ .social-icons li {
+      margin-left:45px;
+  }
+  
+ .social-icons .social-icon {
+      display:flex;
+      justify-content: center;
+      align-items: center; 
+      padding:15px;  
+      border-radius:5px;
+      width:50%; 
+      height:50%; 
+  }
+
+ .social-icons #LinkedIn {
+  background: #0077b0;
+  }
+  .social-icons #Twitter {
+  background: #1da1f2;
+  }
+  .social-icons #Youtube {
+  background: #f70000;    
+  }
+  .social-icons #GitHub {
+    background: #171515;    
+    }
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+a {
+  color: #333;
+}
+
+  
+
+/* #skills {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.skills-category {
+  margin-bottom: 30px;
+}
+
+.skills-category h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.skills-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skills-category li {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.skills-category li img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.skills-category #Matlab {
+  background: #cedce6;
+  }
+
+.skills-category #Python {
+background: #cedce6;
+  }
+
+.skills-category #Mathcad {
+  background: #cedce6;
+  }
+  
+.skills-category #Excel {
+    background: #cedce6;
+  }
+
+.horizontal-list {
+  display: flex;
+  list-style: none;
+  gap: 20px; # Adjust the gap as needed 
+ } 
+
+.horizontal-list li {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+ } 
+
+.horizontal-list img {
+  width: 50px; # Adjust the width of the icons as needed 
+  height: 50px; # Adjust the height of the icons as needed 
+ } */
+
+/* Add any other styles you need for the skills section */
