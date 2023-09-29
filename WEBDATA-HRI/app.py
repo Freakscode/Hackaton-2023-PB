@@ -6,7 +6,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/submit', methods=['POST'])
+""" @app.route('/submit', methods=['POST'])
 def submit():
     answers = []
     for index in range(1, 4):  # Assuming 3 questions
@@ -16,7 +16,7 @@ def submit():
     # Send answers to your ML model using requests library
     prediction = send_to_ml_model(answers)
     
-    return render_template('result.html', prediction=prediction)
+    return render_template('result.html', prediction=prediction)"""
 
 # Implement the send_to_ml_model function to interact with your ML model
 
