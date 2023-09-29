@@ -26,24 +26,62 @@
   </header>
 
   <section id="questions">
-    <h2>Preguntas</h2>
+    <h2>Evaluación de riesgro Cardiovascular</h2>
       <div class="question">
-        <form method="POST">
-          <p>Ingresa tu nombre: ¿Cuál es tu nombre?</p>
-          <input type="text" id="answer1">
-        </form>
+        <p>Por favor ingrese todos los datos solicitados.</p>
+        <input type="text" id="nombre" placeholder="Nombre y apellido">
       </div>
+      <br/>
+      <div>
+        <select id="sexo" style="width: 175px;">
+          <option value="seleccionar" disabled selected>Genero</option>
+          <option value="masculino">Masculino</option>
+          <option value="femenino">Femenino</option>
+         </select>
+      </div>
+      <br/>
       <div class="question">
-        <form method="POST">
-          <p>Pregunta 1: ¿Cuál es tu edad?</p>
-          <input type="number" id="answer2">
-        </form>
+        <input type="text" id="nombre" placeholder="Altura(cm)">
       </div>
-    <!-- Agregar Preguntas Necesarias-->
-    <form method="POST">
-    <button id="enviar">enviar</button>
-    <div id="prediction-result"></div>
-    </form>
+      <br/>
+      <div class="question">
+        <input type="text" id="nombre" placeholder="Peso(kg)">
+      </div>
+      <br/>
+      <div>
+        <select id="fuma" style="width: 175px;">
+          <option value="seleccionar" disabled selected>Fuma</option>
+          <option value="si">Si</option>
+          <option value="no">No</option>
+         </select>
+      </div>
+      <br/>
+      <div>
+        <select id="Alcohol" style="width: 175px;">
+          <option value="seleccionar" disabled selected>Toma Alcohol</option>
+          <option value="si">Si</option>
+          <option value="no">No</option>
+         </select>
+      </div>
+      <br/>
+      <div>
+        <select id="ejercicio" style="width: 175px;">
+          <option value="seleccionar" disabled selected>Realiza ejercicio</option>
+          <option value="si">Si</option>
+          <option value="no">No</option>
+         </select>
+      </div>
+      <br/>
+      <div>
+        <form method="POST">
+          <label for="fname">First name:</label><br>
+          <input type="text" id="fname" name="fname"><br>
+          <label for="lname">Last name:</label><br>
+          <input type="text" id="lname" name="lname">
+          <button id="calcular">Calcular</button>
+          <div id="prediction-result"></div>
+          </form>
+      </div>
   </section>
 
 

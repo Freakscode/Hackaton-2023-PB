@@ -13,14 +13,16 @@ def mock_ml_model(answers):
  # Define the Flask route handling function for the index page
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    global answers
     if request.method == 'POST':
         answers = []
-        for index in range(1, 4):  # Assuming 3 questions
+        for index in range(1, 8):  # Assuming 3 questions
             answer = request.form.get(f'answer{index}')
             answers.append(answer)
        
         # Use the mock_ml_model function for testing
         prediction, analysis, suggestions = mock_ml_model(answers)
+        print(answers)
        
         return render_template('result.html', analysis=analysis, suggestions=suggestions)
 
@@ -41,4 +43,5 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    print(answers)
 
