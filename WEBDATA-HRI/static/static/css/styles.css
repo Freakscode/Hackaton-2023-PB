@@ -141,8 +141,8 @@ footer {
 
 .blog-post img {
   width: 100%;
-  max-width: 300px; /* Adjust the size as per your design */
-  border-radius: 5px;
+  max-width: 200px; /* Ajuste del tamaño según diseño */
+  border-radius: 80px;
   margin-left: 40px;
 }
 
