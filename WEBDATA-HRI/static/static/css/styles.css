@@ -170,41 +170,36 @@ footer {
   background-color: #0056b3;
 }
 
-/* Add any other styles you need for the blog section */
+/* Estilos Contactos  */
 
- .social-icons {
-    display:flex;
-    justify-content:left;
-    margin-top:40px;
-    list-style:none;
-  }
-    
- .social-icons li {
-      margin-left:45px;
-  }
-  
- .social-icons .social-icon {
-      display:flex;
-      justify-content: center;
-      align-items: center; 
-      padding:15px;  
-      border-radius:5px;
-      width:50%; 
-      height:50%; 
-  }
+.social-icons {
+  display: flex;
+  justify-content: space-between; /* Center the icons horizontally */
+  align-items: center; /* Center */
+  flex-direction: row; /* Display icons and names in a column */
+  margin-top: 40px;
+  list-style: none;
+}
 
- .social-icons #LinkedIn {
-  background: #0077b0;
-  }
-  .social-icons #Twitter {
-  background: #1da1f2;
-  }
-  .social-icons #Youtube {
-  background: #f70000;    
-  }
-  .social-icons #GitHub {
-    background: #171515;    
-    }
+.social-icons li {
+  text-align: center;
+  margin-top: 18%px; /* Add spacing between icons */
+}
+
+.social-icons .social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 5px;
+  width: 50px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+}
+
+.social-icons #GitHub {
+  background: #171515;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -213,7 +208,9 @@ ul {
 li {
   margin-bottom: 10px;
   color: #333;
+  text-align: center; /* Center the names */
 }
+
 
 a {
   color: #333;
