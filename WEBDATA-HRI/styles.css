@@ -41,6 +41,23 @@ section {
   padding: 10px;
 }
 
+/* Apply styles to the HTML sections */
+section {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  color: red;
+}
+
+
+
+
 .title  {     
   font-family:Georgia, Cochin, Gseorgia, Times, 'Times New Roman', serif;
   font-size: 25px;
