@@ -7,7 +7,7 @@ body {
 
 /* Header Styles */
 header {
-  background-color: #1c2225;
+  background-color: #2F4550;
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -106,39 +106,6 @@ footer {
   text-align: center;
 }
 
-/* Add styles for the skills section */
-#skills {
-  text-align: center;
-  padding: 1px 0;
-}
-
-.skills-category {
-  margin-bottom: 20px;
-}
-
-.skills-category h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.skills-category ul {
-  list-style: none;
-  padding: 0;
-}
-
-.skills-category li {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 5px;
-}
-
-.skills-category li img {
-  width: 60px;
-  height: 60px;
-  margin-right: 10px;
-  background: #cedce6; /* Apply the background color here */
-}
 
 .horizontal-list {
   display: flex;

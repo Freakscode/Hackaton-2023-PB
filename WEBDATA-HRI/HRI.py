@@ -20,5 +20,6 @@ def submit():
 
 # Implement the send_to_ml_model function to interact with your ML model
 
+# Corrida de la aplicación  
 if __name__ == '__main__':
     app.run(debug=True)
