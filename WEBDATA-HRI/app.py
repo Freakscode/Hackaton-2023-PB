@@ -26,7 +26,7 @@ def index():
 
     return render_template('index.html') 
 
-# Implement the send_to_ml_model function to interact with your ML model
+# Está función será la que defina el envio de los datos al modelo
 # Función de Envió de Respuestas 
 """def send_to_ml_model(answers):
     # Implement code to send data to your ML model and receive a prediction, analysis, and suggestions
