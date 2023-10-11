@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respuesta del Análisis</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='/static/css/results.css')}}">
+</head>
+<body>
+    <div class="result-box">
+    <h1>Resultado del Análisis</h1>
+    <p>Analysis: {{ analysis }}</p>
+    </div>
+
+    <div class="result-box">
+    <h1>Sugerencias</h1>
+    <p>Suggestions: {{ suggestions }}</p>
+    </div>
+</body>
+</html>
