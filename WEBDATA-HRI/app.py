@@ -22,7 +22,7 @@ def index():
        
         # Use the mock_ml_model function for testing
         prediction, analysis, suggestions = mock_ml_model(answers)
-        print(answers)
+        #print(answers)
        
         return render_template('result.html', analysis=analysis, suggestions=suggestions)
 
