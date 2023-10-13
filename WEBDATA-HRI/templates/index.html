@@ -25,71 +25,59 @@
     </div>   
   </header>
 
-  <section id="questions">
-    <h2>Evaluación de riesgro Cardiovascular</h2>
-      <div class="question">
-        <p>Por favor ingrese todos los datos solicitados.</p>
-        <input type="text" id="nombre" placeholder="Nombre y apellido">
-      </div>
-      <br/>
+<section id="questions">
+  <h2>Evaluación de riesgro Cardiovascular</h2>
+    <form method="POST">
+        <div class="question">
+          <p>Por favor ingrese todos los datos solicitados.</p>
+          <input type="text" id="nombre" placeholder="Nombre y apellido">
+        </div>
+        <br/>
       <div>
-        <form method="POST">
           <select id="sexo" style="width: 170px;">
             <option value="seleccionar" disabled selected>Genero</option>
             <option value="masculino">Masculino</option>
             <option value="femenino">Femenino</option>
           </select>
-        </form>
       </div>
       <br/>
       <div class="question">
-        <form method="POST">
           <input type="text" id="nombre" placeholder="Altura(cm)">
-        </form>
       </div>
       <br/>
       <div class="question">
-        <form method="POST">
           <input type="text" id="nombre" placeholder="Peso(kg)">
-        </form>
       </div>
       <br/>
       <div>
-        <form method="POST">
           <select id="fuma" style="width: 170px;">
             <option value="seleccionar" disabled selected>Fuma</option>
             <option value="si">Si</option>
             <option value="no">No</option>
           </select>
-        </form>
       </div>
       <br/>
       <div>
-        <form method="POST">
           <select id="Alcohol" style="width: 170px;">
             <option value="seleccionar" disabled selected>Toma Alcohol</option>
             <option value="si">Si</option>
             <option value="no">No</option>
           </select>
-        </form>
       </div>
       <br/>
       <div>
-        <form method="POST">
           <select id="ejercicio" style="width: 170px;">
             <option value="seleccionar" disabled selected>Realiza ejercicio</option>
             <option value="si">Si</option>
             <option value="no">No</option>
           </select>
-        </form>
       </div>
       <br/>
       <div>
-        <form method="POST">
           <button id="calcular">Calcular</button>
           <div id="prediction-result"></div>
-        </form>
       </div>
+    </form>  
   </section>
 
 
