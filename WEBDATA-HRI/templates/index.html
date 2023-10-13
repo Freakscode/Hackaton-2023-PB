@@ -33,15 +33,19 @@
       </div>
       <br/>
       <div>
-        <select id="sexo" style="width: 170px;">
+        <form method="POST">
+         <select id="sexo" style="width: 170px;">
           <option value="seleccionar" disabled selected>Genero</option>
           <option value="masculino">Masculino</option>
           <option value="femenino">Femenino</option>
          </select>
+        </form>
       </div>
       <br/>
       <div class="question">
+        <form method="POST">
         <input type="text" id="nombre" placeholder="Altura(cm)">
+        </form>
       </div>
       <br/>
       <div class="question">
@@ -49,34 +53,40 @@
       </div>
       <br/>
       <div>
+        <form method="POST">
         <select id="fuma" style="width: 170px;">
           <option value="seleccionar" disabled selected>Fuma</option>
           <option value="si">Si</option>
           <option value="no">No</option>
          </select>
+        </form>
       </div>
       <br/>
       <div>
+        <form method="POST">
         <select id="Alcohol" style="width: 170px;">
           <option value="seleccionar" disabled selected>Toma Alcohol</option>
           <option value="si">Si</option>
           <option value="no">No</option>
          </select>
+        </form>
       </div>
       <br/>
       <div>
+        <form method="POST">
         <select id="ejercicio" style="width: 170px;">
           <option value="seleccionar" disabled selected>Realiza ejercicio</option>
           <option value="si">Si</option>
           <option value="no">No</option>
          </select>
+        </form>
       </div>
       <br/>
       <div>
         <form method="POST">
           <button id="calcular">Calcular</button>
           <div id="prediction-result"></div>
-          </form>
+        </form>
       </div>
   </section>
 
