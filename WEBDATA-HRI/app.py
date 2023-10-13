@@ -19,7 +19,7 @@ def index():
         answers = []
         for index in range(1, 8):  # Assuming 3 questions
             #answer = request.form.get(f'answer{index}')
-            answer = request.form.get('nombre')
+            answer = request.args.get('nombre') # Probando con args.get 
             print(answer)
             answers.append(answer)
         # Prueba con el Modelo Mock
