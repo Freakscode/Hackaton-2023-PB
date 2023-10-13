@@ -27,14 +27,14 @@
 
 <section id="questions">
   <h2>Evaluación de riesgro Cardiovascular</h2>
-    <form method="POST">
+    <form action="/" method="POST">
         <div class="question">
           <p>Por favor ingrese todos los datos solicitados.</p>
           <input type="text" name="nombre" id="nombre" placeholder="Nombre y apellido">
         </div>
         <br/>
       <div>
-          <select id="sexo" style="width: 170px;">
+          <select type="text" name="sexo" id="sexo" style="width: 170px;">
             <option value="seleccionar" disabled selected>Genero</option>
             <option value="masculino">Masculino</option>
             <option value="femenino">Femenino</option>
@@ -42,15 +42,15 @@
       </div>
       <br/>
       <div class="question">
-          <input type="text" id="nombre" placeholder="Altura(cm)">
+          <input type="text" name="altura" id="altura" placeholder="Altura(cm)">
       </div>
       <br/>
       <div class="question">
-          <input type="text" id="nombre" placeholder="Peso(kg)">
+          <input type="text" name="peso" id="peso" placeholder="Peso(kg)">
       </div>
       <br/>
       <div>
-          <select id="fuma" style="width: 170px;">
+          <select id="fuma" name="fuma" style="width: 170px;">
             <option value="seleccionar" disabled selected>Fuma</option>
             <option value="si">Si</option>
             <option value="no">No</option>
@@ -58,7 +58,7 @@
       </div>
       <br/>
       <div>
-          <select id="Alcohol" style="width: 170px;">
+          <select id="Alcohol" name="alcohol" style="width: 170px;">
             <option value="seleccionar" disabled selected>Toma Alcohol</option>
             <option value="si">Si</option>
             <option value="no">No</option>
@@ -66,7 +66,7 @@
       </div>
       <br/>
       <div>
-          <select id="ejercicio" style="width: 170px;">
+          <select id="ejercicio" name="ejercicio" style="width: 170px;">
             <option value="seleccionar" disabled selected>Realiza ejercicio</option>
             <option value="si">Si</option>
             <option value="no">No</option>

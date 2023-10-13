@@ -10,22 +10,21 @@ def mock_ml_model(answers):
     suggestions = "These are mock suggestions."
     return prediction, analysis, suggestions
 
- # Define the Flask route handling function for the index page
+ # Ruta y Función que devuelve el template Index y Result, considerando los métodos GET y POST
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    global answers
+    #global answers
     if request.method == 'POST':
+        # model=pickle.load(open("nombre_modelo"),'rb') --> Así puedo cargar el modelo usando libreria pickle
         answers = []
         for index in range(1, 8):  # Assuming 3 questions
             answer = request.form.get('nombre')
+            print(answer)
             answers.append(answer)
-       
-        # Use the mock_ml_model function for testing
+        # Prueba con el Modelo Mock
         prediction, analysis, suggestions = mock_ml_model(answers)
-        #print(answers)
-       
+        #print(answers)  
         return render_template('result.html', analysis=analysis, suggestions=suggestions)
-
     return render_template('index.html') 
 
 # Está función será la que defina el envio de los datos al modelo
@@ -43,5 +42,5 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True)
-    print(answers)
+    #print(answer)
 
