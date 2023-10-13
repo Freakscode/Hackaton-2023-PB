@@ -18,6 +18,7 @@ def index():
         # model=pickle.load(open("nombre_modelo"),'rb') --> Así puedo cargar el modelo usando libreria pickle
         answers = []
         for index in range(1, 8):  # Assuming 3 questions
+            #answer = request.form.get(f'answer{index}')
             answer = request.form.get('nombre')
             print(answer)
             answers.append(answer)
