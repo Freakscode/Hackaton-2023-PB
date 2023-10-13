@@ -17,7 +17,7 @@ def index():
     if request.method == 'POST':
         answers = []
         for index in range(1, 8):  # Assuming 3 questions
-            answer = request.form.get(f'answer{index}')
+            answer = request.form.get('nombre')
             answers.append(answer)
        
         # Use the mock_ml_model function for testing
