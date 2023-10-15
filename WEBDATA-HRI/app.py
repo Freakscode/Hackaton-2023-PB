@@ -11,21 +11,22 @@ def template():
 """def mock_ml_model(answers):
     # Simulación del modelo 
     prediction = "Mock Prediction"
-    "
-    
+    analysis= ""
+    suggesstions=""
     return prediction, analysis, suggestions"""
 
- # Ruta y Función que devuelve el template Index y Result, considerando los métodos GET y POST
+ # Ruta y Función que devuelve el template Result, considerando los métodos GET y POST
 @app.route('/form', methods=['GET', 'POST'])
 def form():
-    #global Sexo
+    #global NombreApellido 
+    global Alcohol
     if request.method == 'POST':
         NombreApellido=request.form['nombre']
         Sexo=request.form['sexo']
         Altura=request.form['altura']
         Peso=request.form['peso']
         Fuma=request.form['fuma']
-        Alcolhol=request.form['alcohol']
+        Alcohol=request.form['alcohol']
         Ejercicio=request.form['ejercicio']
         analysis = "This is a mock analysis."
         suggestions = "These are mock suggestions."
@@ -42,6 +43,7 @@ def form():
         # Prueba con el Modelo Mock
         prediction, analysis, suggestions = mock_ml_model(answers)
         #print(answers)"""  
+        #return "<h1>Probando" + NombreApellido +"</h1>"  
         return render_template('result.html', analysis=analysis, suggestions=suggestions)
     #return render_template('index.html') 
 
@@ -60,5 +62,5 @@ def form():
 
 if __name__ == '__main__':
     app.run(debug=True)
-    #print(Sexo)
+    #print(Alcohol)
 
