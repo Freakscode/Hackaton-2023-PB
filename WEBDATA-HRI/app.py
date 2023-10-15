@@ -7,17 +7,17 @@ def template():
     # Llamamos y renderizamos la plantilla por separado
     return render_template('index.html') 
 
-# Función de Prueba
+# Función de Prueba para el Modelo
 """def mock_ml_model(answers):
     # Simulación del modelo 
     prediction = "Mock Prediction"
-    analysis = "This is a mock analysis."
-    suggestions = "These are mock suggestions."
+    "
+    
     return prediction, analysis, suggestions"""
 
  # Ruta y Función que devuelve el template Index y Result, considerando los métodos GET y POST
-@app.route('/', methods=['GET', 'POST'])
-def index():
+@app.route('/form', methods=['GET', 'POST'])
+def form():
     #global Sexo
     if request.method == 'POST':
         NombreApellido=request.form['nombre']
@@ -27,6 +27,9 @@ def index():
         Fuma=request.form['fuma']
         Alcolhol=request.form['alcohol']
         Ejercicio=request.form['ejercicio']
+        analysis = "This is a mock analysis."
+        suggestions = "These are mock suggestions."
+
         # model=pickle.load(open("nombre_modelo"),'rb') --> Así puedo cargar el modelo usando libreria pickle
 
         #Está fue la forma inicial de intentar colocar el formulario en un solo arreglo. 
