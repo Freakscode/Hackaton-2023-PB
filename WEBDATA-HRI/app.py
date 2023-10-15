@@ -19,7 +19,7 @@ def template():
 @app.route('/form', methods=['GET', 'POST'])
 def form():
     #global NombreApellido 
-    global Alcohol
+    #global Alcohol
     if request.method == 'POST':
         NombreApellido=request.form['nombre']
         Sexo=request.form['sexo']
