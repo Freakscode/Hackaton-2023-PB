@@ -13,10 +13,19 @@ def mock_ml_model(answers):
  # Ruta y Función que devuelve el template Index y Result, considerando los métodos GET y POST
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    #global answers
+    #global Sexo
     if request.method == 'POST':
+        NombreApellido=request.form['nombre']
+        Sexo=request.form['sexo']
+        Altura=request.form['altura']
+        Peso=request.form['peso']
+        Fuma=request.form['fuma']
+        Alcolhol=request.form['alcohol']
+        Ejercicio=request.form['ejercicio']
         # model=pickle.load(open("nombre_modelo"),'rb') --> Así puedo cargar el modelo usando libreria pickle
-        answers = []
+
+        #Está fue la forma inicial de intentar colocar el formulario en un solo arreglo. 
+        """answers = []
         for index in range(1, 8):  # Assuming 3 questions
             answer = request.form.get(f'answer{index}')
             #answer = request.args.get('nombre') # Probando con args.get 
@@ -24,7 +33,7 @@ def index():
             answers.append(answer)
         # Prueba con el Modelo Mock
         prediction, analysis, suggestions = mock_ml_model(answers)
-        #print(answers)  
+        #print(answers)"""  
         return render_template('result.html', analysis=analysis, suggestions=suggestions)
     return render_template('index.html') 
 
@@ -43,5 +52,5 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True)
-    #print(answer)
+    #print(Sexo)
 
