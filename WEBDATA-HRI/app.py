@@ -2,13 +2,18 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+@app.route('/')
+def template():
+    # Llamamos y renderizamos la plantilla por separado
+    return render_template('index.html') 
+
 # Función de Prueba
-def mock_ml_model(answers):
-    # Simulate the ML model behavior
+"""def mock_ml_model(answers):
+    # Simulación del modelo 
     prediction = "Mock Prediction"
     analysis = "This is a mock analysis."
     suggestions = "These are mock suggestions."
-    return prediction, analysis, suggestions
+    return prediction, analysis, suggestions"""
 
  # Ruta y Función que devuelve el template Index y Result, considerando los métodos GET y POST
 @app.route('/', methods=['GET', 'POST'])
@@ -35,7 +40,7 @@ def index():
         prediction, analysis, suggestions = mock_ml_model(answers)
         #print(answers)"""  
         return render_template('result.html', analysis=analysis, suggestions=suggestions)
-    return render_template('index.html') 
+    #return render_template('index.html') 
 
 # Está función será la que defina el envio de los datos al modelo
 # Función de Envió de Respuestas 
