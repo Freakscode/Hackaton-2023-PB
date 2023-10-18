@@ -21,15 +21,20 @@ def form():
     #global NombreApellido 
     #global Alcohol
     if request.method == 'POST':
-        NombreApellido=request.form['nombre']
-        Sexo=request.form['sexo']
-        Altura=request.form['altura']
-        Peso=request.form['peso']
-        Fuma=request.form['fuma']
-        Alcohol=request.form['alcohol']
-        Ejercicio=request.form['ejercicio']
-        analysis = "This is a mock analysis."
-        suggestions = "These are mock suggestions."
+        datos={}
+
+        datos['NombreApellido']=request.form['nombre']
+        datos['Sexo']=request.form['sexo']
+        datos['Altura']=request.form['altura']
+        datos['Peso']=request.form['peso']
+        datos['Fuma']=request.form['fuma']
+        datos['Alcohol']=request.form['alcohol']
+        datos['Ejercicio']=request.form['ejercicio']
+        print(datos)
+
+        analysis = "Análisis de Prueba"
+        suggestions = "Sugerencias de Prueba"
+
 
         # model=pickle.load(open("nombre_modelo"),'rb') --> Así puedo cargar el modelo usando libreria pickle
 
