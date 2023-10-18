@@ -56,11 +56,13 @@ def form():
         
         print(funct_pred(datos))
 
+
+        nombre=NombreApellido
         analysis = "Análisis de Prueba"
         suggestions = "Sugerencias de Prueba"
 
         #return "<h1>Probando" + NombreApellido +"</h1>"  
-        return render_template('result.html', analysis=analysis, suggestions=suggestions)
+        return render_template('result.html', analysis=analysis, suggestions=suggestions, nombre=nombre)
     #return render_template('index.html') 
 
 
