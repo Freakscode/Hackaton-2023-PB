@@ -36,47 +36,33 @@ def form():
         # Creando el diccionario vació que almacenará las respuestas
         datos={}
 
-        datos['NombreApellido']=request.form['nombre']
-        datos['Sexo']=request.form['sexo']
-        datos['Altura']=request.form['altura']
-        datos['Peso']=request.form['peso']
-        datos['Fuma']=request.form['fuma']
-        datos['Alcohol']=request.form['alcohol']
+        NombreApellido=request.form['nombre']
         datos['Ejercicio']=request.form['ejercicio']
-        print(datos)
+        datos['Sexo']=request.form['sexo']
+        datos['Altura_(cm)']=(request.form['altura'])
+        datos['Peso_(kg)']=(request.form['peso'])
+        datos['Historial_de_Tabaco']=request.form['fuma']
+        datos['Consumo_de_Alcohol']=request.form['alcohol']
         
-        #print(funct_pred(datos))
+        print(datos)
+
+        datos['Consumo_de_Alcohol'] = list(datos['Consumo_de_Alcohol'].replace('si','1')) #or datos['Consumo_de_Alcohol'].replace('no', '0') 
+        datos['Historial_de_Tabaco'] = list(datos['Historial_de_Tabaco'].replace('si', "1")) #or ('no', "0")))  
+        datos["Sexo"] = list(datos["Sexo"].replace('masculino', "1")) #or ('femenino', "2")))
+        datos["Ejercicio"] =list(datos["Ejercicio"].replace('si', "1")) # or ('no', "0"))) 
+
+        print(datos)
+        print(type(datos['Altura_(cm)']))
+        
+        print(funct_pred(datos))
 
         analysis = "Análisis de Prueba"
         suggestions = "Sugerencias de Prueba"
 
-
-        #Está fue la forma inicial de intentar colocar el formulario en un solo arreglo. 
-        """answers = []
-        for index in range(1, 8):  # Assuming 3 questions
-            answer = request.form.get(f'answer{index}')
-            #answer = request.args.get('nombre') # Probando con args.get 
-            print(answer)
-            answers.append(answer)
-        # Prueba con el Modelo Mock
-        prediction, analysis, suggestions = mock_ml_model(answers)
-        #print(answers)"""  
         #return "<h1>Probando" + NombreApellido +"</h1>"  
         return render_template('result.html', analysis=analysis, suggestions=suggestions)
     #return render_template('index.html') 
 
-# Está función será la que defina el envio de los datos al modelo
-# Función de Envió de Respuestas 
-"""def send_to_ml_model(answers):
-    # Implement code to send data to your ML model and receive a prediction, analysis, and suggestions
-    # You may need to use the requests library or another suitable method to communicate with your model
-    
-    # Example:
-    prediction = "Some prediction"
-    analysis = "Some analysis"
-    suggestions = "Some suggestions"
-    
-    return prediction, analysis, suggestions"""
 
 if __name__ == '__main__':
     app.run(debug=True)

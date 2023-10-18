@@ -20,5 +20,5 @@ datos =  {
     'Historial_de_Tabaco': [0],
     'Consumo_de_Alcohol': [0]
 }
-
+print(type(datos))
 print(funct_pred(datos))
