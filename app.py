@@ -44,13 +44,11 @@ def form():
         datos['Alcohol']=request.form['alcohol']
         datos['Ejercicio']=request.form['ejercicio']
         print(datos)
-        print(funct_pred(datos))
+        #print(funct_pred(datos))
 
         analysis = "Análisis de Prueba"
         suggestions = "Sugerencias de Prueba"
 
-
-        # model=pickle.load(open("nombre_modelo"),'rb') --> Así puedo cargar el modelo usando libreria pickle
 
         #Está fue la forma inicial de intentar colocar el formulario en un solo arreglo. 
         """answers = []
