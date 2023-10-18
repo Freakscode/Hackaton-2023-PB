@@ -1,4 +1,7 @@
 from flask import Flask, render_template, request
+import joblib
+import pandas as pd
+import sklearn
 
 app = Flask(__name__)
 
@@ -8,12 +11,20 @@ def template():
     return render_template('index.html') 
 
 # Función de Prueba para el Modelo
-"""def mock_ml_model(answers):
-    # Simulación del modelo 
-    prediction = "Mock Prediction"
-    analysis= ""
-    suggesstions=""
-    return prediction, analysis, suggestions"""
+def funct_pred(datos):
+    modelo = joblib.load('GradientBoosting.pkl')
+    scaler = joblib.load('scaler.pkl')
+
+    # escalar datos
+    nuevos_datos = scaler.transform(pd.DataFrame(datos))
+    y_pred = modelo.predict(nuevos_datos)
+    return y_pred
+
+# Tener en cuenta que se pueden estos detalles de abajo a la función que convoca el modelo. 
+"""
+analysis= ""
+suggesstions=""
+return prediction, analysis, suggestions"""
 
  # Ruta y Función que devuelve el template Result, considerando los métodos GET y POST
 @app.route('/form', methods=['GET', 'POST'])
@@ -21,6 +32,8 @@ def form():
     #global NombreApellido 
     #global Alcohol
     if request.method == 'POST':
+        
+        # Creando el diccionario vació que almacenará las respuestas
         datos={}
 
         datos['NombreApellido']=request.form['nombre']
@@ -31,6 +44,7 @@ def form():
         datos['Alcohol']=request.form['alcohol']
         datos['Ejercicio']=request.form['ejercicio']
         print(datos)
+        print(funct_pred(datos))
 
         analysis = "Análisis de Prueba"
         suggestions = "Sugerencias de Prueba"

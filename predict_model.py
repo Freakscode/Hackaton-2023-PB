@@ -11,7 +11,7 @@ def funct_pred(datos):
     y_pred = modelo.predict(nuevos_datos)
     return y_pred
 
-'''
+
 datos =  {
     'Ejercicio': [1], #Sí
     'Sexo': [1], #Hombre
@@ -22,4 +22,3 @@ datos =  {
 }
 
 print(funct_pred(datos))
-'''
