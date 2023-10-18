@@ -44,6 +44,7 @@ def form():
         datos['Alcohol']=request.form['alcohol']
         datos['Ejercicio']=request.form['ejercicio']
         print(datos)
+        
         #print(funct_pred(datos))
 
         analysis = "Análisis de Prueba"
