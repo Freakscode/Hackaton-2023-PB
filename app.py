@@ -46,10 +46,11 @@ def form():
         
         print(datos)
 
-        datos['Consumo_de_Alcohol'] = list(datos['Consumo_de_Alcohol'].replace('si','1')) #or datos['Consumo_de_Alcohol'].replace('no', '0') 
-        datos['Historial_de_Tabaco'] = list(datos['Historial_de_Tabaco'].replace('si', "1")) #or ('no', "0")))  
-        datos["Sexo"] = list(datos["Sexo"].replace('masculino', "1")) #or ('femenino', "2")))
-        datos["Ejercicio"] =list(datos["Ejercicio"].replace('si', "1")) # or ('no', "0"))) 
+    
+        datos['Consumo_de_Alcohol'] = list(datos['Consumo_de_Alcohol'].replace('si','1').replace('no','0')) 
+        datos['Historial_de_Tabaco'] = list(datos['Historial_de_Tabaco'].replace('si','1').replace('no','0'))   
+        datos["Sexo"] = list(datos["Sexo"].replace('masculino','1').replace('femenino','2')) 
+        datos["Ejercicio"] =list(datos["Ejercicio"].replace('si','1').replace('no','0'))  
 
         print(datos)
         print(type(datos['Altura_(cm)']))
