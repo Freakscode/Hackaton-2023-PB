@@ -46,8 +46,10 @@ def form():
         
         print(datos)
 
-    
-        datos['Consumo_de_Alcohol'] = list(datos['Consumo_de_Alcohol'].replace('si','1').replace('no','0')) 
+        # Transformando y haciendo los cambios de los datos a valores numéricos
+        datos['Consumo_de_Alcohol'] = list(datos['Consumo_de_Alcohol'].replace('si','1').replace('no','0')) # Ingresar un diccionario al replace
+        # Era la idea inicial pero no lo reconocio, posiblemente porqué no está en formato dataframe. 
+        # Puede que sea mejor pasar este proceso a la función funct_pred
         datos['Historial_de_Tabaco'] = list(datos['Historial_de_Tabaco'].replace('si','1').replace('no','0'))   
         datos["Sexo"] = list(datos["Sexo"].replace('masculino','1').replace('femenino','2')) 
         datos["Ejercicio"] =list(datos["Ejercicio"].replace('si','1').replace('no','0'))  
