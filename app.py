@@ -3,16 +3,27 @@ import joblib
 import pandas as pd
 import sklearn
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired, Length 
+from wtforms import StringField, SubmitField, SelectField
+from wtforms.validators import DataRequired, Length , InputRequired
+
+
+# Función de Validación Personalizada
+def tipo_check(form, field):
+    if type(field.data) != float:
+        raise ValueError('Ingrese un Número Valido') # Creo que debe ser con el error de ValidationError
 
 
 # clase para agregar las validaciones a las diferentes entradas
 class User(FlaskForm):
     nombre=StringField('Nombre', validators=[
         DataRequired(),
-        Length(max=30, min=3)
-    ])
+        Length(max=30, min=3) ])
+    sexo=SelectField('Género',validators=[
+        InputRequired()] ,choices=[('genero', 'Genero'), 
+        ('masculino', 'Masculino'),
+        ('femenino', 'Femenino')])
+    altura = StringField('Altura (cm)', 
+    validators=[InputRequired(),tipo_check])
     
 
 # Inicio de la corrida de la App Flask

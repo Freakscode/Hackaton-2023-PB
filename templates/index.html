@@ -38,15 +38,25 @@
           </div>
           <br/>
         <div>
-            <select type="text" name="sexo" id="sexo" style="width: 170px;">
+          <!--{{ form.sexo.label }}-->
+          {{ form.sexo(placeholder="Genero", style="width:170px") }}
+          {% for error in form.sexo.errors %}
+            <span style="color: red;">{{ error }}</span>
+          {% endfor %}
+            <!-- <select type="text" name="sexo" id="sexo" style="width: 170px;">
               <option value="seleccionar" disabled selected>Genero</option>
               <option value="masculino">Masculino</option>
               <option value="femenino">Femenino</option>
-            </select>
+            </select> -->
         </div>
         <br/>
         <div class="question">
-            <input type="text" name="altura" id="altura" placeholder="Altura(cm)" required>
+             <!--<input type="text" name="altura" id="altura" placeholder="Altura(cm)" required>-->
+            <!--<label for="{{ form.altura.id }}">Altura(cm)</label>-->
+            {{ form.altura(placeholder="Altura(cm)", class="custom-input", required="required") }}
+            {% for error in form.altura.errors %}
+              <span style="color: red;">{{ error }}</span>
+            {% endfor %}
         </div>
         <br/>
         <div class="question">
