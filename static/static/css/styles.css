@@ -1,11 +1,11 @@
-/* Body Styles */
+/* Estilos del Body, Tipo de Letra y Margen */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-/* Header Styles */
+/* Estilos del Header # Etiqueta Header */
 header {
   background-color: #2F4550;
   color: #fff;
@@ -34,7 +34,7 @@ header nav li a:hover {
   color: #000000;
 }
 
-/* Sections Styles*/
+/* Estilo de Etiqueta Section*/
 section {
   background-color: #cedce6;
   color: #000000;
@@ -124,9 +124,6 @@ footer {
   height: 60px; /* Adjust the height of the icons as needed */
   background: #cedce6; /* Apply the background color here */
 }
-
-
-/* Projects section */
 
 
 /* Add styles for the blog section */
