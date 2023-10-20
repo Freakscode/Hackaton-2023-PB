@@ -14,10 +14,13 @@ class User(FlaskForm):
     ])
     
 
+# Inicio de la corrida de la App Flask
 app = Flask(__name__)
 
-# clave para seguridad de los campos
+
+# clave para seguridad de los campos es un tipo de seguridad CSRF
 app.secret_key = '123456'
+
 
 @app.route('/')
 def template():
@@ -52,7 +55,7 @@ def form():
     #global NombreApellido 
     #global Alcohol
         # Creando el diccionario vació que almacenará las respuestas
-         
+    if request.method == 'POST':
         datos={}
 
         NombreApellido=request.form['nombre']
@@ -75,16 +78,20 @@ def form():
 
         print(datos)
         print(type(datos['Altura_(cm)']))
-        
         print(funct_pred(datos))
-
 
         nombre=NombreApellido
         analysis = "Análisis de Prueba"
         suggestions = "Sugerencias de Prueba"
 
+        """# instanciamos el objeto User
+        form = User()
+
+        # si la validacion es correcta pasar los datos al modelo
+        if form.validate_on_submit():"""
+        
         #return "<h1>Probando" + NombreApellido +"</h1>"  
-        return render_template('result.html', analysis=analysis, suggestions=suggestions, nombre=nombre)
+        return render_template('result.html', analysis=analysis, suggestions=suggestions, nombre=nombre, form=form)
         #return render_template('index.html') 
 
 
