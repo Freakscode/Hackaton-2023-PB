@@ -30,7 +30,10 @@
       <form action="/form" method="POST">
           <div class="question">
             <p>Por favor ingrese todos los datos solicitados.</p>
-            <input type="text" name="nombre" id="nombre" placeholder="Nombre y apellido">
+            {{ form.nombre() }} {{ form.nombre.label }}
+            {% for error in form.errors %}
+            <span style="color: red;">{{ error }}</span> 
+            {% endfor %} 
           </div>
           <br/>
         <div>
@@ -73,6 +76,7 @@
             </select>
         </div>
         <br/>
+        {{form.hidden_tag()}}
         <div>
             <button type="submit" id="calcular">Calcular</button>
             <div id="prediction-result"></div>

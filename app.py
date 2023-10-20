@@ -2,13 +2,33 @@ from flask import Flask, render_template, request
 import joblib
 import pandas as pd
 import sklearn
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField
+from wtforms.validators import DataRequired, Length 
+
+# clase para agregar las validaciones a las diferentes entradas
+class User(FlaskForm):
+    nombre=StringField('Nombre', validators=[
+        DataRequired(),
+        Length(max=30, min=3)
+    ])
+    
 
 app = Flask(__name__)
 
+# clave para seguridad de los campos
+app.secret_key = '123456'
+
 @app.route('/')
 def template():
-    # Llamamos y renderizamos la plantilla por separado
-    return render_template('index.html') 
+    # instanciamos el objeto User
+    form = User()
+
+    # si la validacion es correcta pasar los datos al modelo
+    if form.validate_on_submit():
+        return render_template('result.html', analysis=analysis, suggestions=suggestions, nombre=nombre)
+    
+    return render_template('index.html', form=form) 
 
 # Función de Prueba para el Modelo
 def funct_pred(datos):
@@ -31,9 +51,8 @@ return prediction, analysis, suggestions"""
 def form():
     #global NombreApellido 
     #global Alcohol
-    if request.method == 'POST':
-        
         # Creando el diccionario vació que almacenará las respuestas
+         
         datos={}
 
         NombreApellido=request.form['nombre']
@@ -66,7 +85,7 @@ def form():
 
         #return "<h1>Probando" + NombreApellido +"</h1>"  
         return render_template('result.html', analysis=analysis, suggestions=suggestions, nombre=nombre)
-    #return render_template('index.html') 
+        #return render_template('index.html') 
 
 
 if __name__ == '__main__':
