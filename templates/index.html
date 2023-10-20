@@ -31,7 +31,7 @@
           <div class="question">
             <p>Por favor ingrese todos los datos solicitados.</p>
             <!--<input type="text" name="nombre" id="nombre" placeholder="Nombre y apellido" required maxlength="45" and minlength="3"> --> 
-            {{ form.nombre()}} {{ form.nombre.label}}
+            {{ form.nombre(placeholder="Nombre y Apellido")}}   <!--{{ form.nombre.label}}-->
             {% for error in form.errors %}
             <span style="color: red;">{{ error }}</span> 
             {% endfor %}
