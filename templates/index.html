@@ -29,11 +29,12 @@
     <h2>Evaluación de riesgro Cardiovascular</h2>
       <form action="/form" method="POST">
           <div class="question">
-            <p>Por favor ingrese todos los datos solicitados.</p>
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre y apellido" required maxlength="45" and minlength="3">
+            <!-- <p>Por favor ingrese todos los datos solicitados.</p>
             {{ form.nombre() }} {{ form.nombre.label }}
             {% for error in form.errors %}
             <span style="color: red;">{{ error }}</span> 
-            {% endfor %} 
+            {% endfor %} --> 
           </div>
           <br/>
         <div>
