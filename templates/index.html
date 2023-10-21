@@ -80,11 +80,15 @@
         </div>
         <br/>
         <div>
-            <select id="Alcohol" name="alcohol" style="width: 170px;">
+            <!--<select id="Alcohol" name="alcohol" style="width: 170px;">
               <option value="seleccionar" disabled selected>Toma Alcohol</option>
               <option value="si">Si</option>
               <option value="no">No</option>
-            </select>
+            </select>-->
+            {{ form.alcohol(placeholder="Toma Alcohol", style="width:170px") }}
+            {% for error in form.alcohol.errors %}
+              <span style="color: red;">{{ error }}</span>
+            {% endfor %}
         </div>
         <br/>
         <div>
