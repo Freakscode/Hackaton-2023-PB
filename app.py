@@ -41,6 +41,11 @@ class User(FlaskForm):
         InputRequired()], 
         choices=[('toma alcohol', 'Toma Acohol'),
         ('si', 'Si'), ('no', 'No')])
+    ejercicio = SelectField('Ejercicio', validators=[
+        InputRequired()], 
+        choices=[('hacer ejercicio', 'Hace Ejercicio'),
+        ('si', 'Si'), ('no', 'No')])
+
 
 # Inicio de la corrida de la App Flask
 app = Flask(__name__)
@@ -57,7 +62,7 @@ def template():
 
     # si la validacion es correcta pasar los datos al modelo
     if form.validate_on_submit():
-        return render_template('result.html', analysis=analysis, suggestions=suggestions, nombre=nombre)
+        return render_template('result.html')
     
     return render_template('index.html', form=form) 
 
