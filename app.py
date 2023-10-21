@@ -20,7 +20,7 @@ class User(FlaskForm):
     nombre=StringField('Nombre', validators=[
         DataRequired(),
         Length(max=30, min=3) ])
-    sexo=SelectField('Género', choices=[('genero', 'Genero'), ('masculino', 'Masculino'), ('femenino', 'Femenino')], 
+    sexo=SelectField('Género', choices=[('', 'Genero'), ('masculino', 'Masculino'), ('femenino', 'Femenino')], 
                     validators=[
                     DataRequired(message='Selecciona una opcion'),
                     AnyOf(['genero', 'masculino', 'femenino'], message="Opción no válida.")
@@ -39,15 +39,15 @@ class User(FlaskForm):
         validators=[DataRequired(),tipo_check])
     fuma = SelectField('Fuma', validators=[
         InputRequired()], 
-        choices=[('Fuma', 'Fuma'),
+        choices=[('', 'Fuma'),
         ('si', 'Si'), ('no', 'No')])
     alcohol = SelectField('Alcohol', validators=[
         InputRequired()], 
-        choices=[('toma alcohol', 'Toma Acohol'),
+        choices=[('', 'Toma Acohol'),
         ('si', 'Si'), ('no', 'No')])
     ejercicio = SelectField('Ejercicio', validators=[
         InputRequired()], 
-        choices=[('hacer ejercicio', 'Hace Ejercicio'),
+        choices=[('', 'Hace Ejercicio'),
         ('si', 'Si'), ('no', 'No')])
 
 
