@@ -55,7 +55,7 @@ def template():
 
     # si la validacion es correcta pasar los datos al modelo
     if form.validate_on_submit():
-        return render_template('result.html', analysis=analysis, suggestions=suggestions, nombre=nombre)
+        return render_template('result.html')
     
     return render_template('index.html', form=form) 
 
