@@ -4,13 +4,13 @@ import pandas as pd
 import sklearn
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField
-from wtforms.validators import DataRequired, Length , InputRequired
+from wtforms.validators import DataRequired, Length , InputRequired, ValidationError
 
 
 # Función de Validación Personalizada
 def tipo_check(form, field):
     if type(field.data) != float:
-        raise ValueError('Ingrese un Número Valido') # Creo que debe ser con el error de ValidationError
+        raise ValidationError('Ingrese un Número Valido') # Creo que debe ser con el error de ValidationError
 
 
 # clase para agregar las validaciones a las diferentes entradas
@@ -19,13 +19,13 @@ class User(FlaskForm):
         DataRequired(),
         Length(max=30, min=3) ])
     sexo=SelectField('Género',validators=[
-        InputRequired()] ,choices=[('genero', 'Genero'), 
+        DataRequired()] ,choices=[('genero', 'Genero'), 
         ('masculino', 'Masculino'),
         ('femenino', 'Femenino')])
     altura = StringField('Altura (cm)', 
-        validators=[InputRequired(),tipo_check])
+        validators=[DataRequired(),tipo_check])
     peso = StringField('Peso (kg)', 
-        validators=[InputRequired(),tipo_check])
+        validators=[DataRequired(),tipo_check])
     fuma = SelectField('Fuma', validators=[
         InputRequired()], 
         choices=[('Fuma', 'Fuma'),

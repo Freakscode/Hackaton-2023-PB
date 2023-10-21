@@ -53,7 +53,7 @@
         <div class="question">
              <!--<input type="text" name="altura" id="altura" placeholder="Altura(cm)" required>-->
             <!--<label for="{{ form.altura.id }}">Altura(cm)</label>-->
-            {{ form.altura(placeholder="Altura(cm)", class="custom-input", required="required") }}
+            {{ form.altura(placeholder="Altura (cm)", class="custom-input", required="required") }}
             {% for error in form.altura.errors %}
               <span style="color: red;">{{ error }}</span>
             {% endfor %}
@@ -61,7 +61,7 @@
         <br/>
         <div class="question">
             <!--<input type="text" name="peso" id="peso" placeholder="Peso(kg)" required>-->
-          {{ form.peso(placeholder="Peso(Kg)", class="custom-input", required="required") }}
+          {{ form.peso(placeholder="Peso (Kg)", class="custom-input", required="required") }}
           {% for error in form.peso.errors %}
             <span style="color: red;">{{ error }}</span>
           {% endfor %}
