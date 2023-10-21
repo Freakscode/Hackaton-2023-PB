@@ -23,7 +23,10 @@ class User(FlaskForm):
         ('masculino', 'Masculino'),
         ('femenino', 'Femenino')])
     altura = StringField('Altura (cm)', 
-    validators=[InputRequired(),tipo_check])
+        validators=[InputRequired(),tipo_check])
+    peso = StringField('Peso (kg)', 
+        validators=[InputRequired(),tipo_check])
+    
     
 
 # Inicio de la corrida de la App Flask
