@@ -34,6 +34,11 @@ class User(FlaskForm):
         InputRequired()], 
         choices=[('toma alcohol', 'Toma Acohol'),
         ('si', 'Si'), ('no', 'No')])
+    ejercicio = SelectField('Ejercicio', validators=[
+        InputRequired()], 
+        choices=[('hacer ejercicio', 'Hace Ejercicio'),
+        ('si', 'Si'), ('no', 'No')])
+
 
 # Inicio de la corrida de la App Flask
 app = Flask(__name__)

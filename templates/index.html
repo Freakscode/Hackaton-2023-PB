@@ -92,11 +92,15 @@
         </div>
         <br/>
         <div>
-            <select id="ejercicio" name="ejercicio" style="width: 170px;">
+            <!--<select id="ejercicio" name="ejercicio" style="width: 170px;">
               <option value="seleccionar" disabled selected>Realiza ejercicio</option>
               <option value="si">Si</option>
               <option value="no">No</option>
-            </select>
+            </select>-->
+            {{ form.ejercicio(placeholder="Hace Ejercicio", style="width:170px") }}
+            {% for error in form.ejercicio.errors %}
+              <span style="color: red;">{{ error }}</span>
+            {% endfor %}
         </div>
         <br/>
         {{form.hidden_tag()}}
