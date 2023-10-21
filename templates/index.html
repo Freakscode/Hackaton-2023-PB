@@ -68,11 +68,15 @@
         </div>
         <br/>
         <div>
-            <select id="fuma" name="fuma" style="width: 170px;">
+           <!-- <select id="fuma" name="fuma" style="width: 170px;">
               <option value="seleccionar" disabled selected>Fuma</option>
               <option value="si">Si</option>
               <option value="no">No</option>
-            </select>
+            </select> -->
+            {{ form.fuma(placeholder="Fuma", style="width:170px") }}
+            {% for error in form.fuma.errors %}
+              <span style="color: red;">{{ error }}</span>
+            {% endfor %}
         </div>
         <br/>
         <div>

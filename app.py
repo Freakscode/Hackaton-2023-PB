@@ -26,7 +26,10 @@ class User(FlaskForm):
         validators=[InputRequired(),tipo_check])
     peso = StringField('Peso (kg)', 
         validators=[InputRequired(),tipo_check])
-    
+    fuma = SelectField('Fuma', validators=[
+        InputRequired()], 
+        choices=[('Fuma', 'Fuma'),
+        ('si', 'Si'), ('no', 'No')])
     
 
 # Inicio de la corrida de la App Flask
