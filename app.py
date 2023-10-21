@@ -3,8 +3,8 @@ import joblib
 import pandas as pd
 import sklearn
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, SelectField
-from wtforms.validators import DataRequired, Length , InputRequired, ValidationError
+from wtforms import StringField, SubmitField, SelectField, FloatField
+from wtforms.validators import DataRequired, Length , InputRequired, ValidationError, AnyOf
 
 
 # Función de Validación Personalizada
@@ -18,13 +18,20 @@ class User(FlaskForm):
     nombre=StringField('Nombre', validators=[
         DataRequired(),
         Length(max=30, min=3) ])
-    sexo=SelectField('Género',validators=[
-        DataRequired()] ,choices=[('genero', 'Genero'), 
+    sexo=SelectField('Género', choices=[('genero', 'Genero'), ('masculino', 'Masculino'), ('femenino', 'Femenino')], 
+                    validators=[
+                    DataRequired(message='Selecciona una opcion'),
+                    AnyOf(['genero', 'masculino', 'femenino'], message="Opción no válida.")
+                    ])
+    '''
+    sexo=SelectField('Género', choices=[('genero', 'Genero'), 
         ('masculino', 'Masculino'),
-        ('femenino', 'Femenino')])
-    altura = StringField('Altura (cm)', 
+        ('femenino', 'Femenino')], validators=[
+        DataRequired()] )
+    '''
+    altura = FloatField('Altura (cm)', 
         validators=[DataRequired(),tipo_check])
-    peso = StringField('Peso (kg)', 
+    peso = FloatField('Peso (kg)', 
         validators=[DataRequired(),tipo_check])
     fuma = SelectField('Fuma', validators=[
         InputRequired()], 
