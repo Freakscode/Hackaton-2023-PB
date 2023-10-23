@@ -102,23 +102,29 @@ def form():
         datos["Sexo"] = list(datos["Sexo"].replace('masculino','1').replace('femenino','2')) 
         datos["Ejercicio"] =list(datos["Ejercicio"].replace('si','1').replace('no','0'))  
 
-        print(datos)
-        print(type(datos['Altura_(cm)']))
+        print(datos['Historial_de_Tabaco'])
+        print(type(datos['Historial_de_Tabaco']))
         analisis=funct_pred(datos)
         print(analisis)
         nombre=NombreApellido
 
-        def resultados(analisis):
+        def resultados(analisis, datos):
             if analisis==1: 
                 analysis = "Es posible que tengas alguna condición cardiovascular."
                 suggestions = "Es recomendable que te dirigas lo antes posible a un especialista para evaluar más a fondo tu caso."
+            
             else: 
                 analysis="Tus condiciones de salud no indican la posibilidad de tener algun problema cardiaco."
-                suggestions = "Sigue con una vida sana, haciendo ejercico y consumiendo alimentos saludables."
+                
+                if datos['Historial_de_Tabaco'] == ['1']:
+                    suggestions = "Sigue con una vida sana, haciendo ejercicio y consumiendo alimentos saludables.\nTe recomendamos reducir el consumo de Tabaco para que tengas una larga vida"
+                else:
+                   suggestions = "Sigue con una vida sana, haciendo ejercicio y consumiendo alimentos saludables."
+            
             return analysis, suggestions, analisis
         
-        results=resultados(analisis)
-        print(results[0])
+        results=resultados(analisis, datos)
+        print(results[1])
 
         """# instanciamos el objeto User
         form = User()
