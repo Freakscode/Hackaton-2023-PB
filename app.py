@@ -80,8 +80,6 @@ def funct_pred(datos):
  # Ruta y Función que devuelve el template Result, considerando los métodos GET y POST
 @app.route('/form', methods=['GET', 'POST'])
 def form():
-    #global NombreApellido 
-    #global Alcohol
         # Creando el diccionario vació que almacenará las respuestas
     if request.method == 'POST':
         datos={}
