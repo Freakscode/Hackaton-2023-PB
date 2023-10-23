@@ -20,21 +20,16 @@ class User(FlaskForm):
     nombre=StringField('Nombre', validators=[
         DataRequired(),
         Length(max=30, min=3) ])
-    sexo=SelectField('Género', choices=[('', 'Genero'), ('masculino', 'Masculino'), ('femenino', 'Femenino')], 
-                    validators=[
-                    DataRequired(message='Selecciona una opcion'),
-                    AnyOf(['genero', 'masculino', 'femenino'], message="Opción no válida.")
-                    ])
-    '''
-    sexo=SelectField('Género', choices=[('genero', 'Genero'), 
-        ('masculino', 'Masculino'),
-        ('femenino', 'Femenino')], validators=[
-        DataRequired()] )
-    '''
+    sexo=SelectField('Género', choices=[('', 'Genero'), 
+        ('masculino', 'Masculino'), ('femenino', 'Femenino')], 
+        validators=[
+        DataRequired(message='Selecciona una opcion'),
+        AnyOf(['genero', 'masculino', 'femenino'], message="Opción no válida.")
+        ])
     altura = FloatField('Altura (cm)', 
         validators=[DataRequired(), 
-                    NumberRange(min=0.01), 
-                    tipo_check])
+        NumberRange(min=0.01), 
+        tipo_check])
     peso = FloatField('Peso (kg)', 
         validators=[DataRequired(),tipo_check])
     fuma = SelectField('Fuma', validators=[
