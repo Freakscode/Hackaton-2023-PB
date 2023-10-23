@@ -113,11 +113,21 @@ def form():
 
         print(datos)
         print(type(datos['Altura_(cm)']))
-        print(funct_pred(datos))
-
+        analisis=funct_pred(datos)
+        print(analisis)
         nombre=NombreApellido
-        analysis = "Análisis de Prueba"
-        suggestions = "Sugerencias de Prueba"
+
+        def resultados(analisis):
+            if analisis==1: 
+                analysis = "Es posible que tengas alguna condición cardiovascular."
+                suggestions = "Es recomendable que te dirigas lo antes posible a un especialista para evaluar más a fondo tu caso."
+            else: 
+                analysis="Tus condiciones de salud no indican la posibilidad de tener algun problema cardiaco."
+                suggestions = "Sigue con una vida sana, con ejercico y consumiendo alimentos saludables."
+            return analysis, suggestions, analisis
+        
+        results=resultados(analisis)
+        print(results[0])
 
         """# instanciamos el objeto User
         form = User()
@@ -126,7 +136,7 @@ def form():
         if form.validate_on_submit():"""
         
         #return "<h1>Probando" + NombreApellido +"</h1>"  
-        return render_template('result.html', analysis=analysis, suggestions=suggestions, nombre=nombre, form=form)
+        return render_template('result.html', analysis=results[0], suggestions=results[1], nombre=nombre)
         #return render_template('index.html') 
 
 
