@@ -77,13 +77,6 @@ def funct_pred(datos):
     return y_pred
 
 
-# Tener en cuenta que se pueden estos detalles de abajo a la función que convoca el modelo. 
-"""
-analysis= ""
-suggesstions=""
-return prediction, analysis, suggestions"""
-
-
  # Ruta y Función que devuelve el template Result, considerando los métodos GET y POST
 @app.route('/form', methods=['GET', 'POST'])
 def form():
