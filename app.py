@@ -114,7 +114,7 @@ def form():
                 suggestions = "Es recomendable que te dirigas lo antes posible a un especialista para evaluar más a fondo tu caso."
             else: 
                 analysis="Tus condiciones de salud no indican la posibilidad de tener algun problema cardiaco."
-                suggestions = "Sigue con una vida sana, con ejercico y consumiendo alimentos saludables."
+                suggestions = "Sigue con una vida sana, haciendo ejercico y consumiendo alimentos saludables."
             return analysis, suggestions, analisis
         
         results=resultados(analisis)
