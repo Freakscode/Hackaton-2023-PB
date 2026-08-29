@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request
 import joblib
 import pandas as pd
@@ -51,7 +52,8 @@ app = Flask(__name__)
 
 
 # clave para seguridad de los campos es un tipo de seguridad CSRF
-app.secret_key = '123456'
+# En produccion se debe definir la variable de entorno SECRET_KEY
+app.secret_key = os.environ.get('SECRET_KEY', '123456')
 
 
 @app.route('/')
@@ -138,5 +140,6 @@ def form():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
-    #print(Alcohol)
+    debug_mode = os.environ.get('FLASK_DEBUG', 'False') == 'True'
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=debug_mode, host='0.0.0.0', port=port)
