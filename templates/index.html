@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DATA-HRI</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='static/css/styles.css')}}">
+</head>
+<body>
+  <header>
+    <nav>
+        <ul>
+          <li><a href="#about">Data-HRI</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+    <div class="title">
+        <h1>Bienvenido</h1>
+    </div>
+    <div class="hero-content">
+        <img class="profile-image" src="{{url_for('static',filename='static/images/DATA-HRI-WF.png')}}" alt="DATA-HRI APP">
+        <h1>DATA-HRI</h1>
+        <span></span>
+        <p>Conoce el estado de tu Salud Cardiovascular</p>
+    </div>   
+  </header>
+
+  <section id="questions">
+    <h2>Evaluación de riesgo Cardiovascular</h2>
+      <form action="/form" method="POST">
+          <div class="question">
+            <p>Por favor ingrese todos los datos solicitados.</p>
+            <!--<input type="text" name="nombre" id="nombre" placeholder="Nombre y apellido" required maxlength="45" and minlength="3"> --> 
+            {{ form.nombre(placeholder="Nombre y Apellido")}}   <!--{{ form.nombre.label}}-->
+            {% for error in form.errors %}
+            <span style="color: red;">{{ error }}</span> 
+            {% endfor %}
+          </div>
+          <br/>
+        <div>
+          <!--{{ form.sexo.label }}-->
+          {{ form.sexo(placeholder="Genero", style="width:170px") }}
+          {% for error in form.sexo.errors %}
+            <span style="color: red;">{{ error }}</span>
+          {% endfor %}
+            <!-- <select type="text" name="sexo" id="sexo" style="width: 170px;">
+              <option value="seleccionar" disabled selected>Genero</option>
+              <option value="masculino">Masculino</option>
+              <option value="femenino">Femenino</option>
+            </select> -->
+        </div>
+        <br/>
+        <div class="question">
+             <!--<input type="text" name="altura" id="altura" placeholder="Altura(cm)" required>-->
+            <!--<label for="{{ form.altura.id }}">Altura(cm)</label>-->
+            <input type="number" name="{{ form.altura.name}}" id="{{ form.altura.id }}" placeholder="Altura (cm)" step="0.01" required>
+            <!--
+            {{ form.altura(placeholder="Altura (cm)", class="custom-input", required="required") }}
+            {% for error in form.altura.errors %}
+              <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+            -->
+        </div>
+        <br/>
+        <div class="question">
+            <!--<input type="text" name="peso" id="peso" placeholder="Peso(kg)" required>-->
+            <input type="number" name="{{ form.peso.name}}" id="{{ form.peso.id }}" placeholder="Peso (Kg)" step="0.01" required>
+            <!--
+            {{ form.peso(placeholder="Peso (Kg)", class="custom-input", required="required") }}
+          {% for error in form.peso.errors %}
+            <span style="color: red;">{{ error }}</span>
+          {% endfor %}
+          -->
+        </div>
+        <br/>
+        <div>
+           <!-- <select id="fuma" name="fuma" style="width: 170px;">
+              <option value="seleccionar" disabled selected>Fuma</option>
+              <option value="si">Si</option>
+              <option value="no">No</option>
+            </select> -->
+            {{ form.fuma(placeholder="Fuma", style="width:170px") }}
+            {% for error in form.fuma.errors %}
+              <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <br/>
+        <div>
+            <!--<select id="Alcohol" name="alcohol" style="width: 170px;">
+              <option value="seleccionar" disabled selected>Toma Alcohol</option>
+              <option value="si">Si</option>
+              <option value="no">No</option>
+            </select>-->
+            {{ form.alcohol(placeholder="Toma Alcohol", style="width:170px") }}
+            {% for error in form.alcohol.errors %}
+              <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <br/>
+        <div>
+            <!--<select id="ejercicio" name="ejercicio" style="width: 170px;">
+              <option value="seleccionar" disabled selected>Realiza ejercicio</option>
+              <option value="si">Si</option>
+              <option value="no">No</option>
+            </select>-->
+            {{ form.ejercicio(placeholder="Hace Ejercicio", style="width:170px") }}
+            {% for error in form.ejercicio.errors %}
+              <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <br/>
+        {{form.hidden_tag()}}
+        <div>
+            <button type="submit" id="calcular">Calcular</button>
+            <div id="prediction-result"></div>
+        </div>
+      </form>  
+    </section>
+
+
+  <section id="about">
+    <h2>Sobre DATA-HRI</h2>
+    <div class="blog-post">
+      <img src="{{url_for('static',filename='static/images/Imagen Corazón.jpg')}}" alt="Imagen 1">
+      <h3>Una app que te ayuda con tu salud</h3>
+      <p>Modelo predictivo que permite conocer tu nivel de riesgo con respecto a enfermedades de indole cardiovascular</p>
+      <a href="">Read more</a>
+    </div>
+  </section>
+ 
+  <section id="contact">
+    <h2>Contacto</h2>
+    <ul class="social-icons">
+      <li> 
+        <a href="https://github.com/Freakscode" target="_blank" class="social-icon" id="GitHub">
+          <img src="{{url_for('static',filename='static/images/github.png')}}" alt="GitHub"/>
+        </a> 
+        <p>Gabriel Cardona</p>
+      </li>
+  
+      <li> 
+        <a href="https://github.com/Oamp1796" target="_blank" class="social-icon" id="GitHub">
+          <img src="{{url_for('static',filename='static/images/github.png')}}" alt="GitHub"/>
+        </a> 
+        <p>Oriol Manrique</p>
+      </li>
+  
+      <li>
+        <a href="https://github.com/JuanjGM23" target="_blank" class="social-icon" id="GitHub">
+          <img src="{{url_for('static',filename='static/images/github.png')}}" alt="GitHub"/>
+        </a> 
+        <p>Juan Gañan</p> 
+      </li>
+  
+      <li>
+        <a href="https://github.com/JuanD-ParraG" target="_blank" class="social-icon" id="GitHub">
+          <img src="{{url_for('static',filename='static/images/github.png')}}" alt="GitHub"/>
+        </a> 
+        <p>Juan Parra</p> 
+      </li>
+  
+      <li>
+        <a href="https://github.com/jbernalg" target="_blank" class="social-icon" id="GitHub">
+          <img src="{{url_for('static',filename='static/images/github.png')}}" alt="GitHub"/>
+        </a> 
+        <p>Jeinfferson Bernal</p> 
+      </li>
+    </ul>
+    <p>
+      Equipo: DATA-HRI <br>
+      Repositorio: <br>
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2023. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
