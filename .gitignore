@@ -1,0 +1,19 @@
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Variables de entorno / secretos
+.env
+
+# Artefactos de WSL/Windows
+*:Zone.Identifier
+
+# Editores
+.vscode/
+.idea/
